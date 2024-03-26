@@ -6,11 +6,11 @@ import React, { useState } from "react";
 import styles from "../BookList.module.css";
 
 type PopularitydAllBooks = {
-  popularitybooks: ApiResponse;
+  popularityallbooks: ApiResponse;
 };
 
-const PopularitydAllBooks = ({ popularitybooks }: PopularitydAllBooks) => {
-  const [sortedBooks, setSortedBooks] = useState(popularitybooks.data);
+const PopularityAllBooks = ({ popularityallbooks }: PopularitydAllBooks) => {
+  const [sortedBooks, setSortedBooks] = useState(popularityallbooks.data);
 
   const BooksReview = () => {
     const sorted = [...sortedBooks].sort((a, b) => {
@@ -80,4 +80,4 @@ const PopularitydAllBooks = ({ popularitybooks }: PopularitydAllBooks) => {
   );
 };
 
-export default PopularitydAllBooks;
+export default PopularityAllBooks;

@@ -23,6 +23,19 @@ export const getPopularityBooks = async (
   return popularitybooks;
 };
 
+export const getPopularityAllBooks = async (
+  page: number = 1
+): Promise<ApiResponse> => {
+  const res = await fetch(
+    `http://localhost:3001/api/v1/popularity?page=${page}`,
+    {
+      next: { revalidate: 1800 },
+    }
+  );
+  const popularityallbooks = await res.json();
+  return popularityallbooks;
+};
+
 /* おすすめ技術書の取得 */
 export const getRecommendationBooks = async (): Promise<ApiResponse> => {
   const res = await fetch(`http://localhost:3001/api/v1/recommendation`, {
