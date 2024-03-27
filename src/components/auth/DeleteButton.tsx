@@ -19,7 +19,6 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({ email }) => {
       if (response.status === 204) {
         console.log("アカウントが削除されました。");
         await signOut({ redirect: false });
-        router.push("/");
         window.location.reload();
       } else {
         console.error("アカウント削除に失敗しました。");
@@ -33,7 +32,7 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({ email }) => {
     <div className="flex items-center pl-[1.5rem] pb-[0.6rem]">
       <button
         onClick={handleDeleteUser}
-        className="flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition duration-150 ease-in-out"
+        className="flex items-center px-4 py-2 text-base rounded-md text-white transition"
       >
         <MdOutlineDelete className="mr-2 text-xl" />
         退会する
